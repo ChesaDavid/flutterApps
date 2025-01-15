@@ -2,6 +2,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://storage.googleapis.com/download.flutter.io' }
     }
 }
 
@@ -15,4 +16,10 @@ subprojects {
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
+}
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.0'  // Or newer version
+        classpath 'com.google.gms:google-services:4.3.10'  // (if using Firebase or other Google services)
+    }
 }
