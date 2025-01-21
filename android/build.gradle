@@ -18,8 +18,13 @@ tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
 buildscript {
+    repositories {
+        google()  // Required for Android Gradle Plugin
+        mavenCentral()  // Central Maven repository
+    }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0'  // Or newer version
-        classpath 'com.google.gms:google-services:4.3.10'  // (if using Firebase or other Google services)
+        classpath 'com.android.tools.build:gradle:7.0.0'
+        classpath 'com.google.gms:google-services:4.3.10'
+        // Add other dependencies if needed
     }
 }
